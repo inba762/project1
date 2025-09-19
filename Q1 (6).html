@@ -821,6 +821,10 @@ field.
     function checkForm() {
       submitBtn.disabled = !(validateName() && validateEmail() && validatePassword());
     }
+    nameField.addEventListener("blur", () => { validateName(); checkForm(); });
+    emailField.addEventListener("blur", () => { validateEmail(); checkForm(); });
+    passField.addEventListener("blur", () => { validatePassword(); checkForm(); });
+    document.getElementById("regForm").addEventListener("input", checkForm);
     </script>
 </body>
 </html>
@@ -1956,4 +1960,5 @@ Hint: Use .toggleClass("dark-mode").-->
   </script>
 </body>
 </html>
+
 
